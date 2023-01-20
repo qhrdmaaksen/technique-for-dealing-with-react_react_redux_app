@@ -1,3 +1,6 @@
+// 파일 이름을 index.jsx 로 설정해주면 나중에 불러올때 디렉터리 이름까지만 입력해 불러올수잇음
+// import rootReducer
+
 import {combineReducers} from "redux";
 import counter from "./counter";
 import todos from "./todos";
