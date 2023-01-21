@@ -1,25 +1,23 @@
-
 const TodoItem = ({ todo, onToggle, onRemove }) => {
   return (
-      <div>
-        <input
-            type="checkbox"
-            onClick={() => onToggle(todo.id)}
-            checked={todo.done}
-            readOnly={true}
-        />
-        <span
-            style={{
-              textDecoration: todo.done ? "line-through" : "none",
-            }}
-        >
+    <div>
+      <input
+        type="checkbox"
+        onClick={() => onToggle(todo.id)}
+        checked={todo.done}
+        readOnly={true}
+      />
+      <span
+        style={{
+          textDecoration: todo.done ? "line-through" : "none",
+        }}
+      >
         {todo.text}
       </span>
-        <button onClick={() => onRemove(todo.id)}>삭제</button>
-      </div>
+      <button onClick={() => onRemove(todo.id)}>삭제</button>
+    </div>
   );
 };
-
 
 const Todos = ({
   input, // 인풋에 입력되는 텍스트
@@ -35,8 +33,8 @@ const Todos = ({
     onChangeInput(""); // 등록 후 인풋 초기화
   };
   const onChange = (e) => {
-    onChangeInput(e.target.value)
-    console.log('onChange', e.target.value)
+    onChangeInput(e.target.value);
+    console.log("onChange", e.target.value);
   };
   return (
     <div>

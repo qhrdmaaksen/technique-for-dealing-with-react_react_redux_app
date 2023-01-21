@@ -61,7 +61,7 @@ const todos = (state = initialState, action) => {
     case INSERT:
       return {
         ...state,
-        insert: action.type,
+        todos: state.todos.concat(action.todo),
       };
     case TOGGLE:
       return {

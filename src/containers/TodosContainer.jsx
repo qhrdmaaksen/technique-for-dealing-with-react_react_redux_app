@@ -2,10 +2,6 @@ import Todos from "../components/Todos";
 import {connect} from "react-redux";
 import {changeInput, insert, remove, toggle} from "../modules/todos";
 
-function TodosItem() {
-  return null;
-}
-
 const TodosContainer = ({
   input,
   todos,
