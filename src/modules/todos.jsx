@@ -76,9 +76,9 @@ const initialState = {
 /**
  * redux-actions 사용 및 immer 사용 리듀서 함수
  * 이머를 사용한다고 모든 업데이트 함수에 immer 를 적용할 필요는 없음(일반 js 로 처리하는것이 편할땐 immer 를 적용하지않아도됨)
- * 아래 코드에서
+ * 아래 코드에서 TOGGLE 을 제외한 업데이트 함수들은 immer 를 쓰지 않은 코드가 오히려 더 짧기때문에 이전형태를 유지하는것도 무방함
  * */
-const todos = handleAction(
+const todos = handleActions(
   {
     [CHANGE_INPUT]: (state, { payload: input }) =>
       produce(state, (draft) => {
@@ -95,7 +95,7 @@ const todos = handleAction(
       }),
     [REMOVE]: (state, { payload: id }) =>
       produce(state, (draft) => {
-        const index = draft.todos.findIndex((todo) => todo.id !== id);
+        const index = draft.todos.findIndex((todo) => todo.id === id);
         draft.todos.splice(index, 1);
       }),
   },
