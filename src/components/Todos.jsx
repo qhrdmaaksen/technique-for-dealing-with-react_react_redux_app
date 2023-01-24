@@ -29,12 +29,13 @@ const Todos = ({
 }) => {
   const onSubmit = (e) => {
     e.preventDefault();
+                console.log("할일목록 등록된 문자열 onSubmit 함수", input)
     onInsert(input);
     onChangeInput(""); // 등록 후 인풋 초기화
   };
   const onChange = (e) => {
     onChangeInput(e.target.value);
-    console.log("onChange", e.target.value);
+    console.log("onChange 함수", e.target.value);
   };
   return (
     <div>

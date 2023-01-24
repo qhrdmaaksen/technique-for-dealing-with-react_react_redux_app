@@ -1,5 +1,5 @@
 // 액션 타입 정의
-import { createAction, handleAction, handleActions } from "redux-actions";
+import {createAction, handleActions} from "redux-actions";
 import produce from "immer";
 
 const CHANGE_INPUT = "todos/CHANGE_INPUT"; // input 값 변경\
@@ -8,10 +8,7 @@ const TOGGLE = "todos/TOGGLE"; // todo 체크/체크 해제
 const REMOVE = "todos/REMOVE"; // todo 제거
 
 // 액션 생성 함수
-export const changeInput = (input) => ({
-  type: CHANGE_INPUT,
-  input,
-});
+export const changeInput = createAction(CHANGE_INPUT, input  => input)
 
 /**
  * 아래 액션 함수 중에 insert 함수는 액션 객체를 만들때 파라미터외에 사전에 이미 선언된 id 값에도 의존하며
@@ -58,7 +55,7 @@ export const remove = (id) => ({
 
 // 초기 상태 및 리듀서 함수
 const initialState = {
-  input: "",
+  input: '',
   todos: [
     {
       id: 1,
